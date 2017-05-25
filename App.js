@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AppRegistry, View, Text, Button, StyleSheet } from 'react-native'
+import { AppRegistry } from 'react-native'
 import { StackNavigator, addNavigationHelpers } from 'react-navigation'
 import {
   createStore, 
@@ -11,37 +11,9 @@ import { reducer as form } from 'redux-form'
 import thunk from 'redux-thunk'
 
 // Grab a list of screens 
-// import HomeScreen from './views/HomeScreen'
-// import LoginScreen from './view/LoginScreen'
+import HomeScreen from './screens/HomeScreen'
+import LoginScreen from './screens/LoginScreen'
 
-class HomeScreen extends Component {
-  static navigationOptions = {
-    title: "Home"
-  }
-
-  render() {
-    const { navigate } = this.props.navigation
-    return(
-      <View style={styles.container}>
-        <Text>HomeScreen</Text>
-        <Button 
-          title="Login"
-          onPress={() => navigate('Login')} />
-      </View>
-    )
-  }
-}
-class LoginScreen extends Component {
-  static navigationOptions = {
-    title: "Login"
-  }
-
-  render() {
-    return(
-      <View style={styles.container}><Text>LoginScreen</Text></View>
-    )
-  }
-}
 // Add Screen to stack
 const AppNavigator = StackNavigator({
   Home: { screen: HomeScreen },
@@ -95,11 +67,3 @@ AppRegistry.registerComponent("FIN_APP_REACT_NATIVE", () => Root)
 
 export default Root
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
