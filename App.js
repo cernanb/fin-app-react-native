@@ -9,32 +9,8 @@ import {
 import { Provider, connect } from 'react-redux'
 import { reducer as form } from 'redux-form'
 import thunk from 'redux-thunk'
-
-// Grab a list of screens 
-import HomeScreen from './screens/HomeScreen'
-import LoginScreen from './screens/LoginScreen'
-
-// Add Screen to stack
-const AppNavigator = StackNavigator({
-  Home: { screen: HomeScreen },
-  Login: { screen: LoginScreen }
-})
-
-const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('Home'))
-const navReducer = (state = initialState, action) => {
-  const nextState = AppNavigator.router.getStateForAction(action, state)
-
-  return nextState || state
-}
-const reducers = combineReducers({
-  form,
-  nav: navReducer
-})
-const middleware = [thunk]
-const store = createStore(
-  reducers, 
-  applyMiddleware(...middleware)
-)
+import store from './redux/store'
+import AppNavigator from './components/AppNavigator'
 
 class App extends Component {
   render() {
