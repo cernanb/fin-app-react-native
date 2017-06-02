@@ -5,6 +5,8 @@ import {
     StyleSheet 
 } from 'react-native'
 
+import LoginForm from './LoginForm'
+
 class LoginScreen extends Component {
   static navigationOptions = {
     title: "Login"
@@ -12,7 +14,7 @@ class LoginScreen extends Component {
 
   render() {
     return(
-      <View style={styles.container}><Text>LoginScreen</Text></View>
+      <View style={styles.container}><LoginForm /></View>
     )
   }
 }
