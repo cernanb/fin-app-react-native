@@ -15,11 +15,13 @@ class LoginScreen extends Component {
     title: "Login"
   }
 
+  handleLogin = formData => this.props.login(formData, this.props.navigation)
+
   render() {
     return(
       <View style={styles.container}>
         <Text>Login</Text>
-        <LoginForm />
+        <LoginForm onSubmit={this.handleLogin} />
         <Button 
           title="Create new account"
           onPress={() => console.log('got to signup page')}

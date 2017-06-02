@@ -1,30 +1,57 @@
 import React, { Component } from 'react'
 import {
+  Button,
   StyleSheet,
   Text,
   View,
   TextInput,
   ScrollView
 } from 'react-native'
+import { Field, reduxForm } from 'redux-form'
 
-import Label from '../../components/Label'
-import Container from '../../components/Container'
+import FormInput from '../../components/FormInput'
 
-export default class LoginForm extends Component {
+const validate = values => {
+  const errors = {}
+
+  if (!values.username) {
+    errors.username = "Username must be filled in!"
+  }
+
+  if (!values.password) {
+    errors.password = "Passworrd must be filled in!"
+  } else if (values.password.length < 8) {
+    errors.password = "Password must be at least 8 characters in length!"
+  }
+  console.log("errors: ", errors)
+
+  return errors
+}
+
+class LoginForm extends Component {
+
+  submit = formData => this.props.onSubmit(formData)
+
   render() {
+    const { handleSubmit, submitting } = this.props
+
     return (
       <View>
-        <Container>
-          <Label text="Username"/>
-          <TextInput style={styles.textInput} />
-        </Container>
-        <Container>
-          <Label text="Password" />
-          <TextInput
-              secureTextEntry={true}
-              style={styles.textInput}
-          />
-        </Container>
+        <Field 
+          label="Username"
+          name="username"
+          secureTextEntry={false}
+          component={FormInput} />
+        <Field 
+          label="Password"
+          secureTextEntry={true}
+          name="password"
+          component={FormInput} />
+        <Button
+          title="Login"
+          disabled={submitting}
+          onPress={handleSubmit(this.submit)}
+        />
       </View>
     )
   }
@@ -32,8 +59,13 @@ export default class LoginForm extends Component {
 
 const styles = StyleSheet.create({
   textInput: {
-    height: 80,
-    fontSize: 30,
+    height: 50,
+    fontSize: 20,
     backgroundColor: '#FFF'
   }
 })
+
+export default reduxForm({
+  form: 'login',
+  validate
+})(LoginForm)
