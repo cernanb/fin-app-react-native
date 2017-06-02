@@ -1,16 +1,9 @@
 import React, { Component } from 'react'
 import { AppRegistry } from 'react-native'
-import { StackNavigator, addNavigationHelpers } from 'react-navigation'
-import {
-  createStore, 
-  applyMiddleware,
-  combineReducers
-} from 'redux'
+import { addNavigationHelpers } from 'react-navigation'
 import { Provider, connect } from 'react-redux'
-import { reducer as form } from 'redux-form'
-import thunk from 'redux-thunk'
-import store from './redux/store'
 import AppNavigator from './components/AppNavigator'
+import store from './redux/store'
 
 class App extends Component {
   render() {
