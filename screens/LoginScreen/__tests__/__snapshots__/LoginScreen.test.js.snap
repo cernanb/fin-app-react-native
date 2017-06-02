@@ -11,12 +11,72 @@ exports[`LoginScreen renders 1`] = `
     }
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-  >
-    LoginScreen
-  </Text>
+  <View>
+    <View
+      style={
+        Object {
+          "marginBottom": 20,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#595856",
+            "fontFamily": "Verdana",
+            "fontSize": 20,
+            "marginBottom": 10,
+          }
+        }
+      >
+        Username
+      </Text>
+      <TextInput
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "fontSize": 30,
+            "height": 80,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "marginBottom": 20,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#595856",
+            "fontFamily": "Verdana",
+            "fontSize": 20,
+            "marginBottom": 10,
+          }
+        }
+      >
+        Password
+      </Text>
+      <TextInput
+        secureTextEntry={true}
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "fontSize": 30,
+            "height": 80,
+          }
+        }
+      />
+    </View>
+  </View>
 </View>
 `;
