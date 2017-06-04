@@ -36,7 +36,7 @@ export default connect(null, { login })(LoginScreen)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#3498db',
     alignItems: 'center',
     justifyContent: 'center',
   },

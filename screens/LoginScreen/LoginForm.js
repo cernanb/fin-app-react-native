@@ -36,7 +36,7 @@ class LoginForm extends Component {
     const { handleSubmit, submitting } = this.props
 
     return (
-      <View>
+      <View style={styles.container}>
         <Field 
           label="Username"
           name="username"
@@ -58,10 +58,8 @@ class LoginForm extends Component {
 }
 
 const styles = StyleSheet.create({
-  textInput: {
-    height: 50,
-    fontSize: 20,
-    backgroundColor: '#FFF'
+  container: {
+    padding: 20
   }
 })
 
