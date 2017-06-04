@@ -15,37 +15,33 @@ const FormInput = ({
             {touched && error ?
                 <Text style={styles.errorText}>{error}</Text>
                 :
-                <Text>{label}</Text>
+                null
             }
             <TextInput
                 style={styles.textInput}
                 onChangeText={onChange}
                 onBlur={onBlur}
                 onFocus={onFocus}
+                placeholder={label}
+                placeholderTextColor="rgba(255,255,255,0.8)"
                 secureTextEntry={secureTextEntry}
                 returnKeyType="next"
                 value={value}
                 {...restInput}
             />
         </View>
-    );
+    )
 }
  
 const styles = StyleSheet.create({
-    textLabel: {
-        fontSize: 20,
-        fontFamily: 'Verdana',
-        marginBottom: 10,
-        color: '#595856'
-    },
     textInput: {
-        height: 30,
-        fontSize: 20,
-        backgroundColor: '#FFF',
-        borderWidth: 0.5,
+        height: 40,
+        backgroundColor: 'rgba(255,255,255, 0.2)',
         borderRadius: 3,
         width: 300,
-        marginBottom: 5,
+        paddingHorizontal: 10,
+        color: 'white',
+        marginBottom: 20,
     },
     errorText: {
         color: 'red',
