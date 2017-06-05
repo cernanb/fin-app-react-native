@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AppRegistry } from 'react-native'
+import { AppRegistry, View, StyleSheet } from 'react-native'
 import { addNavigationHelpers } from 'react-navigation'
 import { Provider, connect } from 'react-redux'
 import AppNavigator from './components/AppNavigator'
@@ -26,7 +26,9 @@ class Root extends Component {
   render() {
     return (
       <Provider store={store}>
-        <AppWithNavigationState />
+        <View style={styles.container}>
+          <AppWithNavigationState />
+        </View>
       </Provider>
     )
   }
@@ -36,3 +38,8 @@ AppRegistry.registerComponent("FIN_APP_REACT_NATIVE", () => Root)
 
 export default Root
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+})
