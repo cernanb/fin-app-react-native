@@ -20,7 +20,7 @@ class LoginScreen extends Component {
   render() {
     return(
       <View style={styles.container}>
-        <Text>Login</Text>
+        <Text style={styles.loginTitle}>Login</Text>
         <LoginForm onSubmit={this.handleLogin} />
         <Button 
           title="Create new account"
@@ -36,8 +36,16 @@ export default connect(null, { login })(LoginScreen)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexGrow: 1,
+    alignItems: 'stretch',
     backgroundColor: '#3498db',
-    alignItems: 'center',
     justifyContent: 'center',
+    padding: 15
   },
+  loginTitle: {
+    textAlign: 'center',
+    fontSize: 30,
+    color: 'white',
+    fontWeight: 'bold'
+  }
 });
