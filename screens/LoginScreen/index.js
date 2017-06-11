@@ -18,13 +18,15 @@ class LoginScreen extends Component {
   handleLogin = formData => this.props.login(formData, this.props.navigation.navigate)
 
   render() {
+    const { navigate } = this.props.navigation
+
     return(
       <View style={styles.container}>
         <Text style={styles.loginTitle}>Login</Text>
         <LoginForm onSubmit={this.handleLogin} />
         <Button 
           title="Create new account"
-          onPress={() => console.log('got to signup page')}
+          onPress={() => navigate('Signup')}
         />
       </View>
     )
