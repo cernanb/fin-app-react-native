@@ -12,7 +12,7 @@ import { Field, reduxForm } from 'redux-form'
 import FormInput from '../../components/FormInput'
 
 const validate = values => {
-  console.log(values)  
+  
   const errors = {}
 
   if (!values.username) {
