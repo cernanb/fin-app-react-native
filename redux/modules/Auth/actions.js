@@ -18,12 +18,17 @@ const updateStorageToken = async (dispatch, formData, navigate) => {
         dispatch(reset('login'))
         navigate('UserProfile')
     } catch(error) {
-        console.log('You failed misserably with AsyncStorage')
+        console.log('You failed misserably with AsyncStorage', error)
         dispatch({ type: 'FAILED_ASYNC_STORAGE' })
     }
 }
 
 export const login = (formData, navigate) => {
+    console.log('hi')
+    return dispatch => updateStorageToken(dispatch, formData, navigate)
+}
+
+export const signup = (formData, navigate) => {
     console.log('hi')
     return dispatch => updateStorageToken(dispatch, formData, navigate)
 }
