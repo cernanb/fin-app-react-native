@@ -11,10 +11,10 @@ class Profile extends Component {
     render() {
         return (
             <View>
-                <Text>User's Profile</Text>
+                <Text>{this.props.user.username}</Text>
             </View>
         )
     }
 }
 
-export default Profile
+export default connect(state => ({user: state.auth}), null)(Profile)
