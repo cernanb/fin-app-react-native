@@ -1,14 +1,29 @@
 import React, { Component } from 'react'
 import {
+    AsyncStorage,
     View, 
     Text, 
     Button,
-    StyleSheet
+    StyleSheet,
 } from 'react-native'
+
+const checkForToken = async(navigate) => {
+    let token = await AsyncStorage.getItem('tokenKey')
+    console.log('hi')
+    if (token) {
+      navigate('UserProfile')
+    } else {
+      navigate('Login')
+    }
+}
 
 class HomeScreen extends Component {
   static navigationOptions = {
     title: "Home"
+  }
+
+  componentDidMount() {
+    checkForToken(this.props.navigation.navigate)
   }
 
   render() {
