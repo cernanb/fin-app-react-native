@@ -11,9 +11,6 @@ import SignupForm from './SignupForm'
 import { signup } from '../../redux/modules/Auth/actions'
 
 class SignupScreen extends Component {
-  static navigationOptions = {
-    title: "Signup"
-  }
 
   handleSignup = formData => this.props.signup(formData, this.props.navigation.navigate)
 
@@ -23,9 +20,18 @@ class SignupScreen extends Component {
       <View style={styles.container}>
         <Text style={styles.loginTitle}>Signup</Text>
         <SignupForm onSubmit={this.handleSignup} />
+        <Button 
+          title="Or log into your account"
+          onPress={() => navigate('Login')}
+        />
       </View>
     )
   }
+}
+
+SignupScreen.navigationOptions = {
+  title: "Signup",
+  headerLeft: null
 }
 
 export default connect(null, { signup })(SignupScreen)

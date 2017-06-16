@@ -11,9 +11,6 @@ import LoginForm from './LoginForm'
 import { login } from '../../redux/modules/Auth/actions'
 
 class LoginScreen extends Component {
-  static navigationOptions = {
-    title: "Login"
-  }
 
   handleLogin = formData => this.props.login(formData, this.props.navigation.navigate)
 
@@ -31,6 +28,11 @@ class LoginScreen extends Component {
       </View>
     )
   }
+}
+
+LoginScreen.navigationOptions = {
+  title: "Login",
+  headerLeft: null,
 }
 
 export default connect(null, { login })(LoginScreen)
