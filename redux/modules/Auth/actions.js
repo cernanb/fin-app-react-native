@@ -16,7 +16,7 @@ const updateStorageToken = async (dispatch, formData, navigate) => {
         await AsyncStorage.setItem('tokenKey', TOKEN_KEY)
         dispatch(setCurrentUser(formData))
         dispatch(reset('login'))
-        navigate('UserProfile')
+        navigate('ProfileTabNav')
     } catch(error) {
         console.log('You failed misserably with AsyncStorage', error)
         dispatch({ type: 'FAILED_ASYNC_STORAGE' })
