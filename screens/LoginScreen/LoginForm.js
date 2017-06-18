@@ -19,7 +19,7 @@ const validate = values => {
   }
 
   if (!values.password) {
-    errors.password = "Passworrd must be filled in!"
+    errors.password = "Password must be filled in!"
   } else if (values.password.length < 8) {
     errors.password = "Password must be at least 8 characters in length!"
   }
