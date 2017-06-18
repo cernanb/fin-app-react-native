@@ -12,9 +12,7 @@ const checkForToken = async(navigate) => {
     console.log('hi')
     if (token) {
       navigate('UserProfile')
-    } else {
-      navigate('Login')
-    }
+    } 
 }
 
 class HomeScreen extends Component {
